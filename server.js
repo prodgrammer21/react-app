@@ -7,9 +7,11 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, '/public')))
 
 app.get('*', (_, res) => {
-    res.sendFile(path.join(__dirname, '/public'), 'index.html')
+    res.sendFile(path.join(__dirname, '/public/index.html'))
 })
 
-app.listen(3001, () => {
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
     console.log("Listening on port: 3001")
 })
