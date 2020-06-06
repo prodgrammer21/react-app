@@ -4,10 +4,10 @@ const path = require('path')
 const app = express()
 
 app.use(express.json())
-app.use(express.static(path.join(__dirname, '/public')))
+app.use(express.static(path.join(__dirname, '/build')))
 
 app.get('*', (_, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.html'))
+    res.sendFile(path.join(__dirname, '/build/index.html'))
 })
 
 const PORT = process.env.PORT || 8080;
