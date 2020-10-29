@@ -6,8 +6,6 @@ import Home from "./pages/Home";
 import Nav from "./partials/Nav";
 
 const App = () => {
-  console.log("process.env: ", process.env);
-
   return (
     <>
       <Nav />
