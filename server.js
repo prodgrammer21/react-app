@@ -11,7 +11,10 @@ app.get("*", (_, res) => {
   res.sendFile(path.join(__dirname, "/build/index.html"));
 });
 
-console.log("PROCESS.ENV: ", process.env);
+app.post("/tes_variables", (_, res) => {
+  res.send(process.env);
+});
+
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
